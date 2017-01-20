@@ -1,0 +1,47 @@
+
+    <!-- Title -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="alert alert-warning" role="alert" *ngIf="view=='show'">
+          Website is still under development Refresh Can help a lot :D  Please report bugs to TokenNinja.com@gmail.com...  New feature Coming SOON...
+          <button type="button" class="close" (click)="view='hide'"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <h3>Your Portfolio</h3>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Page Features -->
+    <div class="row">
+
+      <div class="col-md-9 col-xs-12 hero-feature">
+        <div class="panel panel-default">
+          <div style="height: 50px" class="panel-heading">
+            <h1 style="margin-top:5px" class="panel-title">Tokens</h1>
+          </div>
+          <div class="panel-body">
+            <div class="col-sm-6 col-xs-12">
+              <div class="list-group">
+                <a href="#" class="list-group-item" *ngFor="let token of tokens" (click)="select(token)">
+                  <h4 class="list-group-item-heading">{{token.name}}</h4>
+                  <p style="overflow-x: hidden" class="list-group-item-text">{{token.address}}</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xs-12">
+              <app-form></app-form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-3 col-xs-12 hero-feature">
+        <app-billboard></app-billboard>
+      </div>
+
+    </div>
+    <!-- /.row -->

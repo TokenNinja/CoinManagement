@@ -1,0 +1,73 @@
+<div class="thumbnail">
+  <!-- <img src="http://placehold.it/{{billboard}}" alt=""> -->
+  <!-- <img src="https://assets.imgix.net/~text?fm=png&txtsize=36&w=600&txtfont=Avenir+Next+Condensed,Bold&txt={{billboard}}&txtpad=30&bg=3D4C5F&txtclr=fff" alt=""> -->
+  <div class="jumbotron">
+    <h3>{{billboard}}</h3>
+  </div>
+  <div class="caption">
+    <h3>BillBoard</h3>
+    <h4>Shout out! and Get Ninja Tokens</h4>
+    <p><small>and yes, it's gonna stay on BlockChain forever</small></p>
+    <p>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shoutout">
+        shout out
+      </button>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#about">
+        More Info
+      </button>
+      <button class="btn btn-default btn-sm" (click)="show()"><span class="glyphicon glyphicon-refresh"></span></button>
+  </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" id="shoutout" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Donate Us and Get NinjaToken</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="alert alert-danger" role="alert" *ngIf="view=='show'">
+          Less than 0 ETH donation and message too long may cause transaction failure.
+          <button type="button" class="close" (click)="view='hide'"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+          <textarea class="form-control" rows="3" id="comment" #comment></textarea>
+          <label for="amount">Amount:</label>
+          <input type="text" class="form-control" id="amount" #donate><br>
+          <button class="btn btn-primary center-block" type="button" (click)="shoutout(donate,comment)">Donate</button>
+        </div>
+        <hr>
+        <p>All messages will stay on blockchain. But only the latest message will be broadcast on the Webpage,
+          So be nice...!!! All the ETH Donation will be converted to NinjaToken and credit back to donor's address.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bs-example-modal-sm" id="about" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">About NinjaToken</h3>
+      </div>
+      <div class="modal-body">
+        <h4>ERC20 standard Token</h4>
+        <p>This Token Contract is also under developmet, with each iteration, we will deliver a much secure contract</p>
+        <p>Some new features of this webpage can be purchased using NinjaToken</p>
+        <p>Maybe we will get into AI service someday...who knows</p>
+        <p>Check out source code:</p>
+        <code><a target="_blank" href="https://etherscan.io/address/0x45d147c800d401350b24fc1cd5fbc98040b177c8#code">Source Code</a></code><br><br>
+        <p>Thanks</p>
+        <div class="modal-footer">
+          <p>Bug report: <a>TokenNinja.com@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

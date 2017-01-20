@@ -1,0 +1,273 @@
+<style type="text/css" id="static">
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+  body {line-height: 1; background: #FFF; text-align: left; font-feature-settings: "liga" 0; -moz-font-feature-settings: "liga" off;}
+  ol, ul {list-style: none;}
+  blockquote, q {quotes: none;}
+  blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+  /* remember to define focus styles! */:focus {outline: 0;}
+  /* remember to highlight inserts somehow! */ins {text-decoration: none;}
+  del {text-decoration: line-through;}
+  /* tables still need 'cellspacing="0"' in the markup */table {border-collapse: collapse; border-spacing: 0;}
+  a img {border: none;}
+  /* Typography */
+  ul, li {list-style-type: disc; margin: 0 0 0 10px; padding: 0;}
+  ul li {margin: 0 0 0 13px;}
+  .clear {clear: both; height: 0;}
+  br.clear {line-height: 0;}
+  div.name {font-size: 15px; line-height: 17px; font-weight: bold; padding: 0; text-align: center; font-variant: small-caps; color: #030;}
+  div.logo {display: none;}
+  div.paragraph {position: relative;}
+  div.heading {clear: both; font-weight: bold; font-variant: small-caps;}
+  div.address {position: relative; text-align: center; font-size: 0.917em; line-height: 1.25em; margin-top: 11px;word-wrap: break-word;}
+  div.address2 {position: relative; text-align: left; font-size: 0.917em; line-height: 1.25em;}
+  span.paddedline {display: block;}
+  span.jobtitle, span.companyname, span.degree, span.programline {font-weight: bold;}
+  span.degree, span.programline, span.jobtitle {color: #030;}
+  span.companyname, span.jobcity, span.jobstate {font-style: italic;}
+  span.dates_wrapper {display: block; float: left; color: #999;}
+  .table_wrapper {width: 100%; margin-top: 0;}
+  table.twocol td {width: 50%;}
+  table.skills, table.twocol {width: 100%;}
+  table.skills th, table.skills td {width: 20%; text-align: center;}
+  table.skills th {text-decoration: underline;}
+  table.skills .skillname, table.skills .skillrating {text-align: left; width: 35%;}
+  table.skills .skillrating {width: 20%;}
+  table.skills .skillyears, table.skills .skilllast {width: 19%;}
+  table.skills .pad1 {width: 5%;}
+  table.skills .pad2, table.skills .pad3 {width: 1%;}
+  .nodisplay {display: none;}
+  div#document .topborder {padding-top: 2px; border-color: #030!important;}
+  div#document div.sectiontitle {color: #030;}
+  td.twocol_2 {border-left:1px  solid #FEFDFD;}
+    /*Added by Amit for LCMAIN-955*/
+  .adnlLnks li:before{vertical-align: bottom;}
+  .adnlLnks li.first:before {content: "";}
+  div.adnlLnks{text-align: center}
+  .adnlLnks li {list-style-type: disc;display:inline!important;}
+  /*FIX for FORCEFULLY making left margin ZERO for CL*/
+  div#document .sectionCL .paragraph {margin-top: 0!important;}
+</style>
+<style type="text/css" id="unparsed">
+  div#document {line-height: {$FTLH}px;}
+  div#document table {line-height: {$FTLH}px;}
+  div#document.pagesize {width: {$DOCW}px;}
+  div#document.vmargins {padding-top: {$TBMR}px; padding-bottom: {$TBMR}px;}
+  div#document.hmargins {padding-left: {$LRMR}px; padding-right: {$LRMR}px;}
+  div#document .section {margin-top: {$SCSP}px;}
+  div#document div.firstsection {margin-top: 0;}
+  div#document div.SECTION_CNTC {margin-top: 0;}
+  div#document div.heading {margin-bottom: {$SHMB}px;}
+  div#document div.paragraph {margin-top: {$PSPC}px;}
+  div#document div.firstparagraph {margin-top: 0;}
+  div#document .singlecolumn, div#document .maincolumn {margin-left: {$SCML}px;}
+  span.dates_wrapper {width: {$SCML}px; font-size:{$DTSZ}px;}
+  .fontsize {font-size: {$FTSZ}px;}
+  .fontface {font-family: {$FTFC};}
+  div#document .topborder {border-top: {$LNWT}px dotted;}
+  div#document div.sectiontitle {font-size: {$HDSZ}px; line-height: {$HDLH}px;}
+  div.name {font-size: {$NMSZ}px; line-height: {$NMLH}px;}
+  div.address {font-size: {$CISZ}px; line-height: {$CILH}px; margin-top: {$CIMT}px;}
+  div#document table.skills td {padding-top: {$TDMT}px;}
+
+  /*FIX for Re-calculating width of singlecolumn for CL*/
+  div#document .sectionCL .singlecolumn {margin-left: 0!important; width: 100%;}
+  div.address2 {font-size: {$FTSZ}px; line-height: {$FTLH}px;}
+</style>
+  <style type="text/css" id="dynamic">
+  div#document {line-height: 13px;}
+  div#document table {line-height: 13px;}
+  div#document.pagesize {width: 562px;}
+  div#document.vmargins {padding-top: 12px; padding-bottom: 12px;}
+  div#document.hmargins {padding-left: 25px; padding-right: 25px;}
+  div#document .section {margin-top: 6px;}
+  div#document div.firstsection {margin-top: 0;}
+  div#document div.SECTION_CNTC {margin-top: 0;}
+  div#document div.heading {margin-bottom: 2px;}
+  div#document div.paragraph {margin-top: 5px;}
+  div#document div.firstparagraph {margin-top: 0;}
+  div#document .singlecolumn, div#document .maincolumn {margin-left: 100px;}
+  span.dates_wrapper {width: 100px; font-size:10px;}
+  .fontsize {font-size: 11px;}
+  .fontface {font-family: Georgia, serif;}
+  div#document .topborder {border-top: 1px dotted;}
+  div#document div.sectiontitle {font-size: 13px; line-height: 15px;}
+  div.name {font-size: 23px; line-height: 27px;}
+  div.address {font-size: 11px; line-height: 13px; margin-top: 4px;}
+  div#document table.skills td {padding-top: 2px;}
+
+  /*FIX for Re-calculating width of singlecolumn for CL*/
+  div#document .sectionCL .singlecolumn {margin-left: 0!important; width: 100%;}
+  div.address2 {font-size: 11px; line-height: 13px;}
+</style>
+
+<div id="document" class="fontsize fontface vmargins hmargins linespacing pagesize">
+      <div id="SECTION_PICT664159101" class=" firstsection" style="padding-top:0px;"></div>
+      <div id="SECTION_NAME664159102" class="section" style="padding-top:0px;">
+        <div id="PARAGRAPH_664159102_1_431999943" class="paragraph PARAGRAPH_NAME firstparagraph">
+        <div class="name">
+          <span class="field" id="664159102FNAM1">Yadi</span><span></span> <span class="field" id="664159102LNAM1">Miao</span>
+        </div>
+      </div>
+      </div>
+      <div id="SECTION_CNTC664159103" class="section SECTION_CNTC" style="padding-top:0px;">
+        <div id="PARAGRAPH_664159103_1_431999944" class="paragraph PARAGRAPH_CNTC firstparagraph">
+        <div class="address">
+          <span class="field" id="664159103STRT1">Briar St</span><span>,
+          </span><span class="spaced field" id="664159103CITY1">Chicago</span><span>,
+          </span><span class="spaced field" id="664159103STAT1">IL</span><span>
+          </span><span class="spaced field" id="664159103ZIPC1">60657</span><br>
+          <span class="field" id="664159103HPHN1"></span><span>Cell: </span><span class="field" id="664159103CPHN1">(617)-816-5168</span> <span> -
+          </span><span dependency="EMAI" class="field" id="664159103EMAI1">miaoyadi@gmail.com</span>
+        </div>
+      </div>
+      </div>
+      <div id="SECTION_EDUC664159104" class="section" style="padding-top:0px;">
+        <div class="heading topborder">
+        <div id="SECTNAME_EDUC664159104" class="sectiontitle">Education</div>
+      </div>
+        <div id="PARAGRAPH_664159104_1_431999945" class="paragraph firstparagraph">
+        <span class="dates_wrapper">
+          <span class="jobdates" id="664159104GRYR1">6/2016</span>
+        </span>
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="degree" id="664159104DGRE1">Master of Science</span><span>: </span>
+            <span class="programline" id="664159104STUY1">Actuarial Science</span><br>
+          </span>
+          <span class="paddedline">
+            <span class="companyname companyname_educ" id="664159104SCHO1">Boston University</span><span> - </span>
+            <span class="joblocation jobcity" id="664159104SCIT1">Boston</span><span>, </span>
+            <span class="joblocation jobstate" id="664159104SSTA1">MA</span><br>
+          </span>
+
+          <span class="field" id="664159104FRFM1"><ul>
+            <li>Member of BU Bitcoin Club</li></ul></span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_664159104_2_431999946" class="paragraph">
+        <span class="dates_wrapper">
+          <span class="jobdates" id="664159104GRYR2">6/2014</span>
+        </span>
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="degree" id="664159104DGRE2">Bachelor of Science</span><span>: </span>
+            <span class="programline" id="664159104STUY2">Mathematic</span><br>
+          </span>
+          <span class="paddedline">
+            <span class="companyname companyname_educ" id="664159104SCHO2">Hebei University of Technology</span><span> - </span>
+            <span class="joblocation jobcity" id="664159104SCIT2">Tianjin</span><span>, </span>
+            <span class="joblocation jobstate" id="664159104SSTA2">China</span><br>
+          </span>
+
+          <span class="field" id="664159104FRFM2"><ul><li>Recipient of 2nd National Grants</li><li>Recipient of 3rd University Academic Performance Scholarship</li></ul></span>
+        </div>
+      </div>
+      </div>
+      <div id="SECTION_EXPR664159105" class="section" style="padding-top:0px;">
+        <div class="heading topborder">
+        <div id="SECTNAME_EXPR664159105" class="sectiontitle">Experience</div>
+      </div>
+        <div id="PARAGRAPH_664159105_1_431999947" class="paragraph firstparagraph">
+        <span class="dates_wrapper">
+          <span class="jobdates" format="%m/%Y" id="664159105JSTD1">07/2016</span>
+          <span> to </span>
+          <span class="jobdates" format="%m/%Y" id="664159105EDDT1">Current</span>
+        </span>
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="jobtitle" id="664159105JTIT1">Market-Make Intern</span><span></span>
+          </span>
+          <span class="paddedline">
+            <span class="companyname" id="664159105COMP1">EtherBoost</span><span> – </span>
+            <span class="joblocation jobcity" id="664159105JCIT1">Chicago</span><span>, </span>
+            <span class="joblocation jobstate" id="664159105JSTA1">IL</span><br>
+          </span>
+          <span class="jobline" id="664159105JDES1"><div><br></div><ul><li>Gained essential knowledge of Ethereum Smart Contract</li><li>Create trade bot using REST api</li><li>Up to date on the cryptocurrency landscape                                                                                                                                       </li></ul></span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_664159105_2_431999948" class="paragraph">
+        <span class="dates_wrapper">
+          <span class="jobdates" format="%m/%Y" id="664159105JSTD2">06/2014</span>
+          <span> to </span>
+          <span class="jobdates" format="%m/%Y" id="664159105EDDT2">07/2014</span>
+        </span>
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="jobtitle" id="664159105JTIT2">Intern</span><span></span>
+          </span>
+          <span class="paddedline">
+            <span class="companyname" id="664159105COMP2">China Minsheng Bank</span><span> – </span>
+            <span class="joblocation jobcity" id="664159105JCIT2">Tianjin</span><span>, </span>
+            <span class="joblocation jobstate" id="664159105JSTA2">China</span><br>
+          </span>
+          <span class="jobline" id="664159105JDES2"><div><br></div><ul><li>Supported Chief Operating Officer with daily operational functions.</li><li>Obtained documents, certificates and approvals of client.</li><li>Organized and disseminated  documents during acquisitions.  </li><li>Back-up other customer service. <br />                                                                                                           </li></ul></span>
+        </div>
+      </div>
+        <div id="PARAGRAPH_664159105_3_431999949" class="paragraph">
+        <span class="dates_wrapper">
+          <span class="jobdates" format="%m/%Y" id="664159105JSTD3">07/2012</span>
+          <span> to </span>
+          <span class="jobdates" format="%m/%Y" id="664159105EDDT3">08/2012</span>
+        </span>
+        <div class="singlecolumn">
+          <span class="paddedline">
+            <span class="jobtitle" id="664159105JTIT3">Research & Market Intern</span><span></span>
+          </span>
+          <span class="paddedline">
+            <span class="companyname" id="664159105COMP3">Shanghai CIFCO Futures Co.Ltd</span><span> – </span>
+            <span class="joblocation jobcity" id="664159105JCIT3">Shandong</span><span>, </span>
+            <span class="joblocation jobstate" id="664159105JSTA3">China</span><br>
+          </span>
+          <span class="jobline" id="664159105JDES3"><ul><div><br></div><li>Gained essential knowledge of Futures. </li><li>Analyzed departmental documents for appropriate distribution and filing.</li><li>Answered product questions with up-to-date knowledge of sales and promotions.   </li><li>Created multimedia presentations to introduce the functionality of futures to new potential clients.                                                                                                                                                                                                         </li></ul></span>
+        </div>
+      </div>
+      </div>
+
+      <div id="SECTION_HILT664159837" class="section" style="padding-top:0px;">
+        <div class="heading topborder">
+        <div id="SECTNAME_HILT664159837" class="sectiontitle">Skills</div>
+      </div>
+        <div id="PARAGRAPH_664159837_1_432000797" class="paragraph firstparagraph">
+        <div class="singlecolumn maincolumn">
+          <table class="twocol">
+            <tr>
+              <td class="field twocol_1" id="664159837SKC11"><ul>
+                <li>Solidity(ethereum smart contract)</li>
+                <li>Node.js</li>
+                <li>Bootstrap</li></ul></td>
+              <td class="field twocol_2" id="664159837SKC21"><ul>
+                <li>Angular2</li>
+                <li>Express</li>
+                <li>jQuery</li></ul></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      </div>
+
+
+      <div id="SECTION_CERT664159106" class="section" style="padding-top:0px;">
+        <div class="heading topborder">
+        <div id="SECTNAME_CERT664159106" class="sectiontitle">Certifications</div>
+      </div>
+        <div id="PARAGRAPH_664159106_1_431999950" class="paragraph firstparagraph">
+        <div class="field singlecolumn" id="664159106FRFM1"><ul><li>EXAM P/1 conferred by SOA (Probability)</li><li>EXAM FM/2 conferred by SOA (Financial Model)</li><li>EXAM MFE/3 conferred by SOA (Derivitives,Options,future)</li><li>Validation by Educational Experience on Corporation Finance<br></li></ul></div>
+      </div>
+      </div>
+
+
+      <div id="SECTION_ACCM664159108" class="section" style="padding-top:0px;">
+        <div class="heading topborder">
+        <div id="SECTNAME_ACCM664159108" class="sectiontitle">Project</div>
+      </div>
+        <div id="PARAGRAPH_664159108_1_431999952" class="paragraph firstparagraph">
+        <div class="field singlecolumn" id="664159108FRFM1"><ul><p><strong>TokenNinja.com</strong></p><ul><li>Write and interact with blockchain smart contract<br></li><li>Implemented Angular2 Frontend Framework</li><li>Used BootStrap UI</li></ul></ul></div>
+      </div> <br />
+        <div class="paragraph firstparagraph">
+        <div class="field singlecolumn"><ul><p><strong>Market-make Bot</strong></p><ul><li>Applied REST Api to find arbitrage opportunities<br></li><li>Used NodeJs</li><li>More effiency to place order</li></ul></ul></div>
+      </div> <br>
+        <div class="paragraph firstparagraph">
+        <div class="field singlecolumn"><ul><p><strong>Texas Hold'em Odd Calculator</strong></p><ul><li>Applied Monte Carlo Methods<br></li><li>Used MATLAB platform </li><li>Directed player's strategy by calculating winning rate</li></ul></ul></div>
+      </div>
+      </div>
+    </div>

@@ -1,0 +1,63 @@
+<div class="caption">
+  <h4 class="pull-right">Balance: {{balance}}</h4>
+  <!-- <h4 class="pull-right" *ngIf="view!='transferFrom'">Balance: {{balance}}</h4>
+  <h4 class="pull-right" *ngIf="view=='transferFrom'">Allowance: {{allow}}</h4> -->
+  <h2><a target="_black" href="https://etherscan.io/address/{{token.address}}">{{token.name}}</a></h2>
+  <p>{{token.description}}</p>
+</div>
+<div class="ratings">
+  <p class="pull-right">ERC20 token</p>
+  <p>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+  </p>
+</div>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" [class.active]="view=='transfer'" (click)="view='transfer'"><a>Transfer</a></li>
+  <li role="presentation" [class.active]="view=='transferFrom'" (click)="view='transferFrom'"><a>TransferFrom</a></li>
+  <li role="presentation" [class.active]="view=='allowance'" (click)="view='allowance'"><a>Allowance</a></li>
+</ul>
+
+<div class="form"  [ngSwitch]="view">
+  <form *ngSwitchCase="'transfer'" >
+    <br>
+    <label for="toAddress" class="sr-only">To address</label>
+    <input type="text" id="toAddress" class="form-control" placeholder="To address" autofocus required #tTo>
+    <label for="inputPassword" class="sr-only">Amount</label>
+    <input type="text" id="inputPassword" class="form-control" placeholder="Amount" #tAmount required>
+    <hr>
+    <button class="btn btn-primary center-block" (click)="transfer(tTo,tAmount)">Send</button>
+  </form>
+  <form *ngSwitchCase="'transferFrom'">
+    <br>
+    <label for="fromAddress" class="sr-only">from address</label>
+    <input type="text" id="fromAddress" class="form-control" placeholder="from address" required #tfFrom>
+
+    <!-- <div class="input-group">
+      <input type="text" id="fromAddress" class="form-control" placeholder="from address" required #tfFrom>
+      <span class="input-group-btn">
+        <a class="btn btn-default" (click)="allowance(tfFrom)">check</a>
+      </span>
+    </div> -->
+
+    <label for="toAddress" class="sr-only">To address</label>
+    <input type="text" id="toAddress" class="form-control" placeholder="To address" #tfTo required>
+    <label for="inputPassword" class="sr-only">Amount</label>
+    <input type="text" id="inputPassword" class="form-control" placeholder="Amount" #tfAmount required>
+    <hr>
+    <button class="btn btn-primary center-block" (click)="transferFrom(tfFrom,tfTo,tfAmount)">Send</button>
+  </form>
+  <form *ngSwitchCase="'allowance'">
+    <br>
+    <label for="inputEmail" class="sr-only">To address</label>
+    <input type="text" id="inputEmail" class="form-control" placeholder="To address" autofocus required #aTo>
+    <label for="inputPassword" class="sr-only">Amount</label>
+    <input type="text" id="inputPassword" class="form-control" placeholder="Amount" required #aAmount>
+    <hr>
+    <button class="btn btn-primary center-block" (click)="approve(aTo,aAmount)">Send</button>
+  </form>
+</div>
